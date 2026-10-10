@@ -1,45 +1,45 @@
 # GameLaunch Bridge
 
-Independent gaming creator-marketing pilot, focused initially on console accessories and major game-release windows.
+[Open the live website](https://michaelpan24.github.io/gamelaunch-bridge/) · [Open Creator Discovery](https://michaelpan24.github.io/gamelaunch-bridge/discover.html)
 
-**Live site:** https://michaelpan24.github.io/gamelaunch-bridge/
+## What works now (Creator Discovery beta)
+- Responsive public gaming-creator research directory with **12 manually curated YouTube channel candidates**.
+- Live search across channel names, focus, descriptions and product-fit notes.
+- Filters for content niche, content language, and dated public subscriber-size snapshots; sort by name or dated size.
+- Detailed profile drawer with source links, direct channel URL and explicit missing-data statements.
+- Favorite channels and build a shortlist (up to 8), saved in your **own browser's localStorage**.
+- Export selected creators as a local CSV; create a campaign-research brief that opens your email client.
 
-**Business contact (public, approved by operator):** 1102847670py@gmail.com
+**Important:** none of the 12 creator profiles are represented as opt-in members, signed partners, available for sponsorship, or ready for a specific rate. Size estimates come from public third-party September 2026 dated snapshots; views, audience geography, prices, availability and creator approval are **not verified**. The directory is research and discovery, not a functioning booking marketplace.
 
-**Status:** Public early-stage website, with email-client inquiries available. This is **not** a hosted-form/CRM submission service.
+## Current architecture
+- `index.html` — landing page, services and email inquiry drafts.
+- `discover.html`, `discover.css`, `discover.js` — functioning static-first discovery and campaign shortlist UI.
+- `creators-data.js` — editorially curated public-channel records, research sources and limited dated audience-size observations.
+- `styles.css` — shared design system.
+- `main.js` — email-client-only inquiry helper (not a hosted submission form).
+- `privacy.html` — disclosure of mailbox processing and browser-only shortlist storage.
+- `.nojekyll` — static GitHub Pages support.
 
-> GameLaunch Bridge is independent. It is not affiliated with, sponsored by or endorsed by Rockstar Games or Take-Two Interactive.
+The site is built and served from `main` via GitHub Pages, with no external JS libraries or tracking pixels.
 
-## Site structure
-- `index.html` — English landing page, brand and creator intake UI, scope/indicative prices and disclaimers.
-- `styles.css` — responsive layouts.
-- `main.js` — on form submission, validates fields and opens `mailto:` with an inquiry draft addressed to the public contact. **The visitor must explicitly press Send** in their own email application. No website lead database or submission API is present.
-- `privacy.html` — current email-contact privacy disclosure. Operator legal identity and jurisdiction-specific compliance details must be confirmed before paid engagements.
-- `.nojekyll` — direct static hosting compatibility.
+## Current limitations and required next phase
+1. Expand a verified, diverse creator set to ~30 **without scraping protected data**; validate working channel identities and outreach suitability.
+2. Contact creators one-to-one to seek **express participation, regional audience statistics, rate cards, and availability**. Do not imply consent or endorsement prematurely.
+3. Test mobile and desktop UI interactions; check local CSV output and mailto handling on real devices.
+4. Test a real email inquiry from a browser to the approved mailbox. A mailto link only opens a draft; **no lead is submitted until a visitor sends it**.
+5. Build a proper authenticated CRM + backend and creator-controlled profile onboarding only once consent, privacy and actual demand are validated.
+6. Verify the contracting party, jurisdiction, privacy/retention handling, and paid campaign terms prior to commercial execution.
 
-## Tested and not tested
-- [x] Files committed to main branch
-- [x] GitHub Pages previously deployed successfully
-- [x] Email recipient deliberately configured with user permission
-- [x] Both form configurations updated from preview to email draft mode
-- [x] Static site privacy/contact copy updated
-- [ ] Manual cross-device functional test for opening mailto drafts
-- [ ] Actual test message received in Gmail (no test message sent automatically)
-- [ ] Identity and retention policies validated before scaled outreach
-- [ ] Hosted form and private CRM integration (optional upgrade; not currently implemented)
-- [ ] Production legal terms / privacy review before paid contracts
-- [ ] Review and send individually drafted, compliant brand/creator outreach
+## Current public contact
+`1102847670py@gmail.com` — user-approved project contact. Business correspondence may be sent to this address.
 
-### Testing the inquiry UI
-1. Visit the live site, select **For brands** or **For creators**.
-2. Enter fictitious test details, accept the notice and press **Open email draft**.
-3. Your email application should open a draft to `1102847670py@gmail.com`. Confirm correct subject and body.
-4. If you choose to send an actual test message, verify it reaches Gmail.
-5. If the email handler doesn't launch, use the visible contact link. The site cannot detect whether the email was ultimately sent.
+## Intellectual property
+Independent marketing research; no affiliation with Rockstar Games, Take-Two or YouTube. Creator names and links are included as public research references, not as representations of agreement or participation. Requests to correct/remove listings can be directed to the public contact address.
 
-**Important:** Do not put personal customer records, CRM exports or other nonpublic data into this public repository.
+## Commercial model (to validate)
+- $499 creator research shortlist, conditional on agreed scope.
+- $1,499 campaign coordination fee, creator fees and third-party costs separate.
+- No promise of views, conversions, signed creators or revenue.
 
-## Indicative commercial pilot
-- $499 creator-research shortlist; deliverables must be scoped in a proposal.
-- $1,499 coordination fee, with creator compensation, media, taxes and usage rights separate unless contract explicitly says otherwise.
-- No views, revenue, confirmed creator availability, or partnership is promised.
+**Do not commit internal CRM exports, personal communication, confidential client data or unpublished creator media kits to this public repository.**
