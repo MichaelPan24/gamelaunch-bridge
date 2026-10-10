@@ -3,14 +3,14 @@
 [Open the live website](https://michaelpan24.github.io/gamelaunch-bridge/) · [Open Creator Discovery](https://michaelpan24.github.io/gamelaunch-bridge/discover.html)
 
 ## What works now (Creator Discovery beta)
-- Responsive public gaming-creator research directory with **12 manually curated YouTube channel candidates**.
+- Responsive public gaming-creator research directory with **30 curated public creator/channel candidates**, including some third-party directory profiles.
 - Live search across channel names, focus, descriptions and product-fit notes.
 - Filters for content niche, content language, and dated public subscriber-size snapshots; sort by name or dated size.
 - Detailed profile drawer with source links, direct channel URL and explicit missing-data statements.
 - Favorite channels and build a shortlist (up to 8), saved in your **own browser's localStorage**.
 - Export selected creators as a local CSV; create a campaign-research brief that opens your email client.
 
-**Important:** none of the 12 creator profiles are represented as opt-in members, signed partners, available for sponsorship, or ready for a specific rate. Size estimates come from public third-party September 2026 dated snapshots; views, audience geography, prices, availability and creator approval are **not verified**. The directory is research and discovery, not a functioning booking marketplace.
+**Important:** none of the 30 creator profiles are represented as opt-in members, signed partners, available for sponsorship, or ready for a specific rate. Size estimates come from public third-party June–October 2026 dated third-party snapshots; views, audience geography, prices, availability and creator approval are **not verified**. The directory is research and discovery, not a functioning booking marketplace.
 
 ## Current architecture
 - `index.html` — landing page, services and email inquiry drafts.
@@ -24,7 +24,7 @@
 The site is built and served from `main` via GitHub Pages, with no external JS libraries or tracking pixels.
 
 ## Current limitations and required next phase
-1. Expand a verified, diverse creator set to ~30 **without scraping protected data**; validate working channel identities and outreach suitability.
+1. Further validate creator channel identities, source dates, current activity and outreach suitability for the 30 research leads; a listing is not a signed opt-in.
 2. Contact creators one-to-one to seek **express participation, regional audience statistics, rate cards, and availability**. Do not imply consent or endorsement prematurely.
 3. Test mobile and desktop UI interactions; check local CSV output and mailto handling on real devices.
 4. Test a real email inquiry from a browser to the approved mailbox. A mailto link only opens a draft; **no lead is submitted until a visitor sends it**.
