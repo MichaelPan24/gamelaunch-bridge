@@ -9,7 +9,7 @@
   const MAIL = "1102847670py@gmail.com";
   const byId = id => document.getElementById(id);
   const safe = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
-  const shortNumber = count => count == null ? "Not checked" : count >= 1e6 ? (count/1e6).toFixed(2).replace(/0$/,"").replace(/\.$/,"")+"M" : (count/1e3).toFixed(0)+"K";
+  const shortNumber = count => count == null ? "Not checked" : count >= 1e6 ? (count/1e6).toFixed(2).replace(/0$/,"").replace(/\.$/,"")+"M" : (count/1e3).toFixed(count<1e5?1:0).replace(/\\.0$/,"")+"K";
   const validIDs = new Set(DATA.map(p => p.id));
   function load(key) { try {const v=JSON.parse(localStorage.getItem(key)||"[]");return Array.isArray(v) ? v.filter(id=>validIDs.has(id)) : [];}catch{return [];} }
   function save(key, ids) {try{localStorage.setItem(key,JSON.stringify(ids));}catch{}}
@@ -41,7 +41,7 @@
       const selected=state.selected.includes(p.id),saved=state.saved.includes(p.id);
       return `<article class="creator-card ${selected?"selected":""}">
         <div class="creator-cover ${categoryClass(i)}"><div class="avatar" aria-hidden="true">${safe(initials(p.name))}</div><div style="display:flex;gap:6px;align-items:start"><span class="category-chip">${safe(p.category)}</span><button type="button" class="heart" data-action="save" data-id="${safe(p.id)}" aria-label="${saved?"Remove":"Save"} ${safe(p.name)}" aria-pressed="${saved}">${saved?"♥":"♡"}</button></div></div>
-        <div class="creator-body"><h3 class="creator-name">${safe(p.name)}</h3><div class="creator-handle">${safe(p.handle)} · YouTube · ${safe(p.language)}</div><p class="creator-desc">${safe(p.description)}</p>
+        <div class="creator-body"><h3 class="creator-name">${safe(p.name)}</h3><div class="creator-handle">${safe(p.handle)} · ${safe(p.platform)} · ${safe(p.language)}</div><p class="creator-desc">${safe(p.description)}</p>
         <div class="creator-facts"><div><b>${shortNumber(p.subs)}</b><span>${p.subs==null?"Followers not verified":"Subscribers · "+safe(p.subsAsOf)}</span></div><div><b>Not checked</b><span>Avg. recent views</span></div></div>
         <p class="creator-notice">◌ Not onboarded · Rates &amp; availability unknown</p></div>
         <div class="creator-actions"><button type="button" class="add-shortlist" data-action="select" data-id="${safe(p.id)}" aria-pressed="${selected}">${selected?"✓ Shortlisted":"+ Add to shortlist"}</button><button type="button" class="view-details" data-action="details" data-id="${safe(p.id)}">View profile ↗</button></div></article>`;
@@ -70,14 +70,14 @@
   function openDetails(id){
     const p=DATA.find(x=>x.id===id);if(!p)return;
     const box=byId("dialog-content");
-    box.innerHTML=`<span class="modal-kicker">PUBLIC CHANNEL · RESEARCH PROFILE</span><h2>${safe(p.name)}</h2><p>${safe(p.handle)} · YouTube · ${safe(p.language)}</p>
+    box.innerHTML=`<span class="modal-kicker">PUBLIC CANDIDATE · RESEARCH PROFILE</span><h2>${safe(p.name)}</h2><p>${safe(p.handle)} · ${safe(p.platform)} · ${safe(p.language)}</p>
       <div class="modal-meta"><span>${safe(p.category)}</span><span>${p.subs==null?"Subscriber count not verified":"About "+shortNumber(p.subs)+" subscribers (snapshot "+safe(p.subsAsOf)+")"}</span><span>Uncontacted candidate</span></div>
       <h3>Content overview</h3><p>${safe(p.description)}</p>
       <h3>Potential product fit — editorial suggestion</h3><p>${safe(p.fit)}. This is not an approved campaign concept or evidence of interest.</p>
       <h3>Data transparency</h3><p class="fact-note">Recent average video views: not verified. Audience countries: not verified. Sponsorship rate: not verified. Availability or willingness to participate: not verified.</p>
       <p class="fact-note">Research references: <a class="source-link" href="${safe(p.evidence)}" target="_blank" rel="noopener noreferrer">Creator directory source ↗</a>${p.subsSource?' · <a class="source-link" href="'+safe(p.subsSource)+'" target="_blank" rel="noopener noreferrer">Dated audience-size reference ↗</a>':""}.</p>
-      <div class="modal-cta"><a class="btn primary" href="${safe(p.channel)}" target="_blank" rel="noopener noreferrer">Visit public channel ↗</a><button class="btn secondary" type="button" id="modal-add">${state.selected.includes(p.id)?"Remove from shortlist":"+ Add to shortlist"}</button></div>
-      <p class="modal-safety">This profile is public-channel research only. The creator is not claimed as a platform member, client or available sponsor.</p>`;
+      <div class="modal-cta"><a class="btn primary" href="${safe(p.channel)}" target="_blank" rel="noopener noreferrer">${p.platform==="Creator directory"?"View public directory profile ↗":"Visit public channel ↗"}</a><button class="btn secondary" type="button" id="modal-add">${state.selected.includes(p.id)?"Remove from shortlist":"+ Add to shortlist"}</button></div>
+      <p class="modal-safety">This profile is public-channel research only. The creator is not claimed as a platform member, client or available sponsor. Some candidate URLs open external research profiles rather than the original channel.</p>`;
     byId("modal-add").addEventListener("click",()=>{toggleSelected(id);box.querySelector("#modal-add").textContent=state.selected.includes(id)?"Remove from shortlist":"+ Add to shortlist";});
     const dialog=byId("creator-dialog");
     if(typeof dialog.showModal==="function")dialog.showModal();else dialog.setAttribute("open","");
