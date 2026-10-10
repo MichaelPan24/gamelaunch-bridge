@@ -27,6 +27,7 @@
       if(state.onlySaved && !state.saved.includes(p.id))return false;
       if(size==="large" && (p.subs==null || p.subs<1e6))return false;
       if(size==="mid" && (p.subs==null || p.subs>=1e6 || p.subs<1e5))return false;
+      if(size==="small" && (p.subs==null || p.subs>=1e5))return false;
       if(size==="unknown" && p.subs!=null)return false;
       return true;
     });
