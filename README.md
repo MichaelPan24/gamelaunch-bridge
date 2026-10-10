@@ -1,47 +1,45 @@
 # GameLaunch Bridge
 
-An **independent pilot** helping gaming-accessory brands evaluate creator-led marketing around major game-release windows.
+Independent gaming creator-marketing pilot, focused initially on console accessories and major game-release windows.
 
-**Site:** https://michaelpan24.github.io/gamelaunch-bridge/
+**Live site:** https://michaelpan24.github.io/gamelaunch-bridge/
 
-> Important: We are **not** affiliated with, sponsored by, or endorsed by Rockstar Games or Take-Two Interactive. GTA VI is referenced only as public release context.
+**Business contact (public, approved by operator):** 1102847670py@gmail.com
 
-## Deployment
+**Status:** Public early-stage website, with email-client inquiries available. This is **not** a hosted-form/CRM submission service.
 
-- Hosted with GitHub Pages from `main` at repository root.
-- Pages workflow: [latest runs](https://github.com/MichaelPan24/gamelaunch-bridge/actions).
-- Static files: `index.html`, `styles.css`, `main.js`, `privacy.html`, `.nojekyll`.
+> GameLaunch Bridge is independent. It is not affiliated with, sponsored by or endorsed by Rockstar Games or Take-Two Interactive.
 
-## Site status — preliminary public preview
+## Site structure
+- `index.html` — English landing page, brand and creator intake UI, scope/indicative prices and disclaimers.
+- `styles.css` — responsive layouts.
+- `main.js` — on form submission, validates fields and opens `mailto:` with an inquiry draft addressed to the public contact. **The visitor must explicitly press Send** in their own email application. No website lead database or submission API is present.
+- `privacy.html` — current email-contact privacy disclosure. Operator legal identity and jurisdiction-specific compliance details must be confirmed before paid engagements.
+- `.nojekyll` — direct static hosting compatibility.
 
-**Brand and creator forms are not live.** They intentionally do not send or store visitor data. Their submit handler displays an explicit not-configured notice; there is no form backend.
+## Tested and not tested
+- [x] Files committed to main branch
+- [x] GitHub Pages previously deployed successfully
+- [x] Email recipient deliberately configured with user permission
+- [x] Both form configurations updated from preview to email draft mode
+- [x] Static site privacy/contact copy updated
+- [ ] Manual cross-device functional test for opening mailto drafts
+- [ ] Actual test message received in Gmail (no test message sent automatically)
+- [ ] Identity and retention policies validated before scaled outreach
+- [ ] Hosted form and private CRM integration (optional upgrade; not currently implemented)
+- [ ] Production legal terms / privacy review before paid contracts
+- [ ] Review and send individually drafted, compliant brand/creator outreach
 
-Do not claim to accept inquiries or collect personal information until all of the following are complete:
+### Testing the inquiry UI
+1. Visit the live site, select **For brands** or **For creators**.
+2. Enter fictitious test details, accept the notice and press **Open email draft**.
+3. Your email application should open a draft to `1102847670py@gmail.com`. Confirm correct subject and body.
+4. If you choose to send an actual test message, verify it reaches Gmail.
+5. If the email handler doesn't launch, use the visible contact link. The site cannot detect whether the email was ultimately sent.
 
-1. Choose a publicly listed business contact mailbox approved by the operator.
-2. Publish the actual operator identity, contact details and data-handling / retention terms.
-3. Choose a functional form service or email-inquiry workflow; implement it.
-4. Test a brand form and a creator form end-to-end, including delivery, spam filtering, validation and mobile experience.
-5. Update privacy notice and remove `noindex,nofollow` only when ready for real visitors.
+**Important:** Do not put personal customer records, CRM exports or other nonpublic data into this public repository.
 
-To use the optional **mail client** flow, set `BUSINESS_CONTACT_EMAIL` in `main.js` after permission is granted and update the website form copy. A `mailto:` interaction *only opens the visitor's email app*; it does not guarantee the email was sent.
-
-## Commercial pilot
-
-- Research-only creator screening proposal: **$499 / project** (indicative, quote subject to scope).
-- Creator-campaign coordination proposal: **$1,499 management fee**, separate from creator compensation, media spend, taxes and content rights.
-- No views, sales, creator bookings or partner affiliations are guaranteed.
-- Any sponsored content must follow the relevant platform disclosure, permission, marketing and privacy requirements.
-
-## Internal next actions
-
-- [x] Upload website files
-- [x] Enable GitHub Pages / observe successful deployment
-- [x] Prepare individual brand and creator outreach drafts **without sending**
-- [ ] Verify public business contact mailbox and privacy details
-- [ ] Activate and test inquiry delivery
-- [ ] Review and approve the initial one-to-one outreach drafts
-- [ ] Send a small, compliant test batch and record replies in private CRM
-- [ ] Confirm creator availability and quotes before offering booked placements
-
-**Do not commit internal CRM spreadsheets, contact lists, customer replies, or private user information into this public repository.**
+## Indicative commercial pilot
+- $499 creator-research shortlist; deliverables must be scoped in a proposal.
+- $1,499 coordination fee, with creator compensation, media, taxes and usage rights separate unless contract explicitly says otherwise.
+- No views, revenue, confirmed creator availability, or partnership is promised.
