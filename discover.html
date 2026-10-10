@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Find gaming creators for major launch campaigns. Curated public YouTube channel research, comparison, saved shortlist and a transparent inquiry workflow.">
+<meta name="theme-color" content="#10131d">
+<meta name="robots" content="noindex,nofollow">
+<title>Discover gaming creators — GameLaunch Bridge</title>
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="discover.css">
+</head>
+<body>
+<a class="skip" href="#results">Skip to creator results</a>
+<header class="header"><div class="shell headerinner"><a class="wordmark" href="index.html"><span class="logo">G<span class="star">✦</span></span> GAME<span class="dim">LAUNCH</span> <span class="subword">BRIDGE</span></a><nav aria-label="Main navigation"><a href="discover.html" aria-current="page">Discover</a><a href="index.html#how">How it works</a><a href="index.html#brands">For brands</a><a href="index.html#creators">For creators</a></nav><a class="navcta" href="#shortlist">View shortlist <span id="nav-count">0</span> ↗</a></div></header>
+<main class="discovery-shell">
+<section class="explore-intro shell">
+<div class="eyebrow"><span class="live"></span> CREATOR DISCOVERY / EARLY RESEARCH BETA</div>
+<h1>Find creators.<br><em>Build the right shortlist.</em></h1>
+<p>Browse a carefully selected starter directory of public gaming channels, compare content fit, and build an exportable brief for your next campaign. <strong>No creator listed here is represented as signed, opted in, or available.</strong></p>
+<div class="intro-stats"><div><strong id="total-count">—</strong><span>public channel candidates</span></div><div><strong>0</strong><span>confirmed paid partnerships</span></div><div><strong>2026</strong><span>release-season research</span></div></div>
+</section>
+<section class="shell marketplace">
+<div class="market-head"><div><div class="eyebrow plain">/ EXPLORE CHANNELS</div><h2>Creator directory</h2><p>Use real channel links and documented source references. Historical subscriber snapshots are dated estimates, not live metrics.</p></div><div class="mini-actions"><button id="show-saved" type="button" class="outline-action" aria-pressed="false">♡ Saved <span id="saved-count">0</span></button><button id="reset-filters" type="button" class="outline-action">↺ Reset</button></div></div>
+<div class="filterbar">
+<label class="search"><span class="control-label">SEARCH</span><input id="search" type="search" placeholder="Creator, GTA, headset, speedruns…" autocomplete="off" aria-label="Search channels"></label>
+<label><span class="control-label">CONTENT FOCUS</span><select id="category" aria-label="Filter content focus"><option value="">All content</option><option>GTA guides</option><option>GTA news</option><option>GTA gameplay</option><option>Entertainment</option><option>Gaming tech</option><option>Live &amp; variety</option></select></label>
+<label><span class="control-label">LANGUAGE</span><select id="language" aria-label="Filter language"><option value="">Any language</option><option>English</option><option>Spanish</option></select></label>
+<label><span class="control-label">PUBLIC SIZE SNAPSHOT</span><select id="size" aria-label="Filter dated audience size"><option value="">Any / unknown</option><option value="large">1M+ (dated)</option><option value="mid">100K–999K (dated)</option><option value="unknown">Not verified</option></select></label>
+<label><span class="control-label">SORT</span><select id="sort" aria-label="Sort creators"><option value="curated">Curated order</option><option value="size">Snapshot: highest first</option><option value="az">Name: A–Z</option></select></label>
+</div>
+<div class="resultbar"><span><strong id="result-count">0</strong> matched channels</span><span class="pillstatus">● Public leads only · No partner endorsement</span></div>
+<div id="results" class="creator-grid" aria-live="polite"></div>
+<div id="empty" class="empty-state" hidden><h3>No creators matched.</h3><p>Try clearing a filter or broadening the search.</p><button type="button" id="empty-reset" class="btn secondary">Clear filters</button></div>
+<p class="source-note">Editorial research, not a transactional marketplace. No private data or YouTube scraping API is used. Please independently verify audience fit, current performance and permissions before contacting creators. <a href="mailto:1102847670py@gmail.com?subject=Creator%20profile%20correction%20or%20removal">Request a correction or removal ↗</a></p>
+</section>
+<section class="shell shortlist-section" id="shortlist">
+<div><div class="eyebrow plain">/ CAMPAIGN WORKSPACE</div><h2>Your shortlist <span class="count-bubble" id="shortlist-total">0</span></h2><p>Select up to 8 channels to compare and add them to a proposed outreach brief. Selection is saved only in this browser. It does not contact creators or create a booking.</p></div>
+<div class="shortlist-layout"><div class="selection-panel" id="selected-list"><p class="no-selection">No creators selected yet. Use <strong>+ Add to shortlist</strong> on a card to get started.</p></div>
+<div class="brief-panel"><h3>Send a campaign research request</h3><label for="brief-brand">Company / brand</label><input id="brief-brand" maxlength="120" placeholder="Your brand">
+<label for="brief-goal">Product and target audience</label><textarea id="brief-goal" maxlength="1000" placeholder="e.g. Console headset launch, English-speaking audience, $2,000 test budget"></textarea>
+<button type="button" class="btn primary" id="email-brief" disabled>Open email draft ↗</button>
+<button type="button" class="outline-action export-action" id="download-csv" disabled>↓ Export shortlist CSV</button>
+<p class="brief-note" role="status" id="brief-status">Selecting a creator does not mean they are available. An email draft only opens your mail app; you must press Send there.</p></div></div>
+</section>
+<section class="shell next-step"><div><span class="eyebrow plain">/ WHAT'S NEXT</span><h2>Need a verified, actionable shortlist?</h2><p>We can research channel fit, request creator permission and gather quotes before a brand commits to a paid campaign. Historical metrics shown above are not a proposal or rate card.</p></div><a class="btn primary" href="index.html#offers">Explore pilot services ↗</a></section>
+</main>
+<dialog id="creator-dialog" class="creator-dialog" aria-label="Creator profile"><div id="dialog-content"></div><form method="dialog"><button class="modal-close" aria-label="Close creator profile" type="submit">✕</button></form></dialog>
+<footer class="footer"><div class="shell footerinner"><div><a class="wordmark" href="index.html">GAME<span class="dim">LAUNCH</span> BRIDGE</a><p>Independent public-channel research. Not affiliated with any listed creator.</p></div><div class="footerlinks"><a href="index.html">Home</a><a href="privacy.html">Privacy</a><a href="mailto:1102847670py@gmail.com">Contact</a></div></div><div class="shell legal">No creators on this starter directory have been verified as signed partners. GTA, Grand Theft Auto, Rockstar Games and YouTube are trademarks of their respective owners. No affiliation or endorsement is implied.</div></footer>
+<script src="creators-data.js" defer></script><script src="discover.js" defer></script>
+</body></html>
